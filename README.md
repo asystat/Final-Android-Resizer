@@ -24,15 +24,6 @@ I have not tried resizing 9patch images.
 
 If you love this tool and want to contribute with the developer, please consider donating!
 
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_donations">
-<input type="hidden" name="business" value="seba.breit@gmail.com">
-<input type="hidden" name="lc" value="US">
-<input type="hidden" name="item_name" value="Sebastian Breit">
-<input type="hidden" name="no_note" value="0">
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
-<input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea.">
-<img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
-</form>
+<a href='https://pledgie.com/campaigns/23760'><img alt='Click here to lend your support to: Final Android Resizer and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/23760.png?skin_name=chrome' border='0' ></a>
+
 
