@@ -4,10 +4,10 @@ Final Android Resizer
 A simple yet powerful resizer for Android developers
 --------------
 
-Well I started this project because I was sick of resizing all resources for my Android projects.
-The <a href="http://android-ui-utils.googlecode.com/hg/asset-studio/dist/index.html">Android Assets Studio</a> gives me resized images one by one and it takes forever. 
+I started this project because I was sick of resizing all resources for my Android projects.
+The <a href="http://android-ui-utils.googlecode.com/hg/asset-studio/dist/index.html">Android Assets Studio</a> gives resized images one by one and it takes forever. 
 
-There is another very similar project <a href="https://code.google.com/p/9patch-resizer/">here</a> but it doesn't fit my needs (only accepts png, does not have all densities, one-by-one resizing)
+There is another very similar project <a href="https://code.google.com/p/9patch-resizer/">here</a> but it didn't fit my needs (only accepts png, does not have all densities, one-by-one resizing)
 
 
 With **Final Android Resizer** you are able to:
@@ -18,8 +18,9 @@ With **Final Android Resizer** you are able to:
 - Select output densities (ldpi, mdpi, tvdpi, hdpi, xhdpi, xxhdpi, xxxhdpi)
 - Preserve the image format (jpg,png)
 
-I have not tried resizing 9patch images.
+I have not tried resizing 9patch images yet.
 
+If you just want to download the executable jar, click <h2><a href="https://github.com/asystat/Final-Android-Resizer/blob/master/Executable%20Jar/Final%20Android%20Resizer.jar">here</a></h2>
 
 
 If you love this tool and want to contribute with the developer, please consider donating!
