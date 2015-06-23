@@ -58,7 +58,7 @@ public class ImageProcessor {
 		ResampleOp resampleOp = new ResampleOp(size, (size * image.getHeight())
 				/ image.getWidth());
 		resampleOp.setFilter(ResampleFilters.getLanczos3Filter());
-		resampleOp.setUnsharpenMask(AdvancedResizeOp.UnsharpenMask.Normal);
+		resampleOp.setUnsharpenMask(AdvancedResizeOp.UnsharpenMask.None);
 		image = resampleOp.filter(image, null);
 
 		ImageIO.write(image, getExtension(f.getName()), destFile);
