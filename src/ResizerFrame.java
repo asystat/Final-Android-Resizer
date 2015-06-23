@@ -89,9 +89,9 @@ public class ResizerFrame extends JFrame {
 	private JCheckBox ch_xxhdpi;
 
 	public ResizerFrame() {
-
+		super("Final-Android-Resizer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -163,6 +163,7 @@ public class ResizerFrame extends JFrame {
 		panel.add(ch_xxhdpi, gbc_ch_xxhdpi);
 
 		ch_xxxhdpi = new JCheckBox("xxxhdpi");
+		ch_xxxhdpi.setSelected(true);
 		GridBagConstraints gbc_ch_xxxhdpi = new GridBagConstraints();
 		gbc_ch_xxxhdpi.insets = new Insets(0, 0, 5, 5);
 		gbc_ch_xxxhdpi.gridx = 0;
@@ -228,6 +229,7 @@ public class ResizerFrame extends JFrame {
 		comboBoxItems.add("hdpi");
 		comboBoxItems.add("xhdpi");
 		comboBoxItems.add("xxhdpi");
+		comboBoxItems.add("xxxhdpi");
 		final DefaultComboBoxModel model = new DefaultComboBoxModel(
 				comboBoxItems);
 		inputDensity = new JComboBox(model);
