@@ -40,14 +40,22 @@ public class ImageProcessor {
 	private static final float XXXHDPI_RATIO=16;
 	
 
-	public static void processImage(File f, File resDirectory, String originalSize,
+	public static void processImage(File f, File resDirectory, String originalSize, String drawableDirectory, boolean overwrite,
 			String resFolder) throws FileAlreadyExistsException, IOException, NullPointerException {
 
-		String finalPath=resDirectory.getAbsolutePath() + "/drawable-"	+ resFolder + "/" + f.getName();
+		String finalPath = "";
+
+		if(drawableDirectory.equalsIgnoreCase("mipmap")) {
+			finalPath = resDirectory.getAbsolutePath() + "/res-mipmap/mipmap-" + resFolder + "/" + f.getName();
+		}else{
+			finalPath = resDirectory.getAbsolutePath() + "/res-drawable/drawable-" + resFolder + "/" + f.getName();
+		}
 		
 		File destFile=new File(finalPath);
-		if(destFile.exists())
-			throw new FileAlreadyExistsException();
+		if(!overwrite) {
+			if (destFile.exists())
+				throw new FileAlreadyExistsException();
+		}
 		
 		destFile.getParentFile().mkdirs();
 		
@@ -67,36 +75,38 @@ public class ImageProcessor {
 	private static int getRequiredSize(String originalSize, String resFolder,
 			int width) {
 		float destRatio=1;
-		if(resFolder.equalsIgnoreCase("ldpi"))
-			destRatio=LDPI_RATIO;
-		else if(resFolder.equalsIgnoreCase("mdpi"))
-			destRatio=MDPI_RATIO;
-		else if(resFolder.equalsIgnoreCase("tvdpi"))
-			destRatio=TVDPI_RATIO;
-		else if(resFolder.equalsIgnoreCase("hdpi"))
-			destRatio=HDPI_RATIO;
-		else if(resFolder.equalsIgnoreCase("xhdpi"))
-			destRatio=XHDPI_RATIO;
-		else if(resFolder.equalsIgnoreCase("xxhdpi"))
-			destRatio=XXHDPI_RATIO;
-		else if(resFolder.equalsIgnoreCase("xxxhdpi"))
-			destRatio=XXXHDPI_RATIO;
-		
+		if(resFolder.equalsIgnoreCase("ldpi")) {
+			destRatio = LDPI_RATIO;
+		}else if(resFolder.equalsIgnoreCase("mdpi")) {
+			destRatio = MDPI_RATIO;
+		}else if(resFolder.equalsIgnoreCase("tvdpi")) {
+			destRatio = TVDPI_RATIO;
+		}else if(resFolder.equalsIgnoreCase("hdpi")) {
+			destRatio = HDPI_RATIO;
+		}else if(resFolder.equalsIgnoreCase("xhdpi")) {
+			destRatio = XHDPI_RATIO;
+		}else if(resFolder.equalsIgnoreCase("xxhdpi")) {
+			destRatio = XXHDPI_RATIO;
+		}else if(resFolder.equalsIgnoreCase("xxxhdpi")) {
+			destRatio = XXXHDPI_RATIO;
+		}
+
 		float origRatio=1;
-		if(originalSize.equalsIgnoreCase("ldpi"))
-			origRatio=LDPI_RATIO;
-		else if(originalSize.equalsIgnoreCase("mdpi"))
-			origRatio=MDPI_RATIO;
-		else if(originalSize.equalsIgnoreCase("tvdpi"))
-			origRatio=TVDPI_RATIO;
-		else if(originalSize.equalsIgnoreCase("hdpi"))
-			origRatio=HDPI_RATIO;
-		else if(originalSize.equalsIgnoreCase("xhdpi"))
-			origRatio=XHDPI_RATIO;
-		else if(originalSize.equalsIgnoreCase("xxhdpi"))
-			origRatio=XXHDPI_RATIO;
-		else if(originalSize.equalsIgnoreCase("xxxhdpi"))
-			origRatio=XXXHDPI_RATIO;
+		if(originalSize.equalsIgnoreCase("ldpi")) {
+			origRatio = LDPI_RATIO;
+		}else if(originalSize.equalsIgnoreCase("mdpi")) {
+			origRatio = MDPI_RATIO;
+		}else if(originalSize.equalsIgnoreCase("tvdpi")) {
+			origRatio = TVDPI_RATIO;
+		}else if(originalSize.equalsIgnoreCase("hdpi")) {
+			origRatio = HDPI_RATIO;
+		}else if(originalSize.equalsIgnoreCase("xhdpi")) {
+			origRatio = XHDPI_RATIO;
+		}else if(originalSize.equalsIgnoreCase("xxhdpi")) {
+			origRatio = XXHDPI_RATIO;
+		}else if(originalSize.equalsIgnoreCase("xxxhdpi")) {
+			origRatio = XXXHDPI_RATIO;
+		}
 
 		return Math.round(((float)width)*destRatio/origRatio);
 	}

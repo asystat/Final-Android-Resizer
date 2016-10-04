@@ -17,6 +17,8 @@ With **Final Android Resizer** you are able to:
 - Resize several images at once (Drag & Drop)
 - Select output densities (ldpi, mdpi, tvdpi, hdpi, xhdpi, xxhdpi, xxxhdpi)
 - Preserve the image format (jpg,png)
+- Option to select output directory (mipmap or drawable)
+- Option to select if want to overwrite file
 
 I have not tried resizing 9patch images yet.
 

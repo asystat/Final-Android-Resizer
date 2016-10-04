@@ -33,7 +33,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
-import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -79,7 +78,10 @@ public class ResizerFrame extends JFrame {
 	 */
 	File resFile = null;
 	private JLabel lblInputDensity;
-	private JComboBox inputDensity;
+	private JComboBox<String> inputDensity;
+	private JLabel lblInputDirectory;
+	private JComboBox<String> inputDirectory;
+	private JCheckBox ch_overwrite;
 	private JCheckBox ch_xxxhdpi;
 	private JCheckBox ch_tvdpi;
 	private JCheckBox ch_ldpi;
@@ -89,7 +91,7 @@ public class ResizerFrame extends JFrame {
 	private JCheckBox ch_xxhdpi;
 
 	public ResizerFrame() {
-		super("Final-Android-Resizer");
+		super("Final Android Resizer");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 350);
 		contentPane = new JPanel();
@@ -223,16 +225,16 @@ public class ResizerFrame extends JFrame {
 		gbc_lblInputDensity.gridy = 1;
 		panel_1.add(lblInputDensity, gbc_lblInputDensity);
 
-		Vector comboBoxItems = new Vector();
+		Vector<String> comboBoxItems = new Vector<String>();
 		comboBoxItems.add("ldpi");
 		comboBoxItems.add("mdpi");
 		comboBoxItems.add("hdpi");
 		comboBoxItems.add("xhdpi");
 		comboBoxItems.add("xxhdpi");
 		comboBoxItems.add("xxxhdpi");
-		final DefaultComboBoxModel model = new DefaultComboBoxModel(
+		final DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>(
 				comboBoxItems);
-		inputDensity = new JComboBox(model);
+		inputDensity = new JComboBox<String>(model);
 		inputDensity.setSelectedIndex(4);
 		GridBagConstraints gbc_inputDensity = new GridBagConstraints();
 		gbc_inputDensity.insets = new Insets(0, 0, 0, 5);
@@ -240,6 +242,37 @@ public class ResizerFrame extends JFrame {
 		gbc_inputDensity.gridx = 1;
 		gbc_inputDensity.gridy = 1;
 		panel_1.add(inputDensity, gbc_inputDensity);
+
+		lblInputDirectory = new JLabel("Output directory");
+		GridBagConstraints gbc_lblInputDirectory = new GridBagConstraints();
+		gbc_lblInputDirectory.anchor = GridBagConstraints.WEST;
+		gbc_lblInputDirectory.insets = new Insets(0, 0, 0, 5);
+		gbc_lblInputDirectory.gridx = 2;
+		gbc_lblInputDirectory.gridy = 1;
+		panel_1.add(lblInputDirectory, gbc_lblInputDirectory);
+
+		Vector<String> comboBoxItemsDirectory = new Vector<String>();
+		comboBoxItemsDirectory.add("mipmap");
+		comboBoxItemsDirectory.add("drawable");
+		final DefaultComboBoxModel<String> modelDirectory = new DefaultComboBoxModel<String>(
+				comboBoxItemsDirectory);
+		inputDirectory = new JComboBox<String>(modelDirectory);
+		inputDirectory.setSelectedIndex(0);
+		GridBagConstraints gbc_inputDirectory = new GridBagConstraints();
+		gbc_inputDirectory.insets = new Insets(0, 0, 0, 5);
+		gbc_inputDirectory.fill = GridBagConstraints.HORIZONTAL;
+		gbc_inputDirectory.gridx = 3;
+		gbc_inputDirectory.gridy = 1;
+		panel_1.add(inputDirectory, gbc_inputDirectory);
+
+		ch_overwrite = new JCheckBox("Overwrite drawable");
+		ch_overwrite.setSelected(true);
+		GridBagConstraints gbc_ch_overwrite = new GridBagConstraints();
+		gbc_ch_overwrite.insets = new Insets(0, 0, 0, 5);
+		gbc_ch_overwrite.fill = GridBagConstraints.HORIZONTAL;
+		gbc_ch_overwrite.gridx = 0;
+		gbc_ch_overwrite.gridy = 2;
+		panel_1.add(ch_overwrite, gbc_ch_overwrite);
 
 		panel_4 = new JPanel();
 		contentPane.add(panel_4, BorderLayout.CENTER);
@@ -251,7 +284,7 @@ public class ResizerFrame extends JFrame {
 
 		new FileDrop(System.out, panel_4, /* dragBorder, */
 		new FileDrop.Listener() {
-			public void filesDropped(final java.io.File[] files) {
+			public void filesDropped(final File[] files) {
 
 				if (resFile == null) {
 					showWarning("Please select a destination folder first!");
@@ -270,7 +303,7 @@ public class ResizerFrame extends JFrame {
 								try {
 									ImageProcessor.processImage(files[i],
 											resFile, (String) inputDensity
-													.getSelectedItem(),
+													.getSelectedItem(), (String) inputDirectory.getSelectedItem(), ch_overwrite.isSelected(),
 											exportString);
 								} catch (FileAlreadyExistsException e) {
 									showWarning("The file "
