@@ -13,7 +13,7 @@ There is another very similar project <a href="https://code.google.com/p/9patch-
 With **Final Android Resizer** you are able to:
 
 - Select starting density
-- Select res directory, so you don't have to move the resized files
+- Automatically set output folder where your main image is located 
 - Resize several images at once (Drag & Drop)
 - Select output densities (ldpi, mdpi, tvdpi, hdpi, xhdpi, xxhdpi, xxxhdpi)
 - Preserve the image format (jpg,png)
@@ -22,7 +22,7 @@ With **Final Android Resizer** you are able to:
 
 I have not tried resizing 9patch images yet.
 
-If you just want to download the executable jar, click <b><a href="Executable%20Jar/Final%20Android%20Resizer.jar?raw=true">here</a></b>
+If you just want to download the executable jar, click <b><a href="https://github.com/chayanforyou/Android-Image-Resizer/blob/master/Android%20Image%20Resizer.jar?raw=true">here</a></b>
 
 
 If you love this tool and want to contribute with the developer, please consider donating!
