@@ -4,6 +4,8 @@ Final Android Resizer
 A simple yet powerful resizer for Android developers
 --------------
 
+*I don't have time to continue improving this project. Feel free to commit changes.*
+
 I started this project because I was sick of resizing all resources for my Android projects.
 The <a href="http://android-ui-utils.googlecode.com/hg/asset-studio/dist/index.html">Android Assets Studio</a> gives resized images one by one and it takes forever. 
 
