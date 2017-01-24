@@ -17,6 +17,6 @@ With **Xamarin Image Resizer** you are able to:
 
 As with the original author, I have not tried resizing 9patch images yet.
 
-If you just want to download the executable jar, click <b><a href="Executable%20Jar/Final%20Android%20Resizer.jar?raw=true">here</a></b>
+If you just want to download the executable jar, click <b><a href="Executable%20Jar/Final-Android-Resizer.jar?raw=true">here</a></b>
 
 If you love this tool and want to contribute with the developer, <a href="https://github.com/asystat/Final-Android-Resizer"> please check the original author to donate via the readme!</a>
