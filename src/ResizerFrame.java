@@ -88,6 +88,13 @@ public class ResizerFrame extends JFrame {
 
     public ResizerFrame() {
         super("Final Android Resizer");
+
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        }catch(Exception ex) {
+            ex.printStackTrace();
+        }
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 450, 350);
         contentPane = new JPanel();
