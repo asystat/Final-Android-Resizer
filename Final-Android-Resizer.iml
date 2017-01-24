@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="libs" level="project" />
     <orderEntry type="library" name="Final Android Resizer" level="project" />
+    <orderEntry type="library" name="libs" level="project" />
   </component>
 </module>
