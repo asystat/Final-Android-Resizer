@@ -46,9 +46,9 @@ public class ImageProcessor {
 		String finalPath = "";
 
 		if(drawableDirectory.equalsIgnoreCase("mipmap")) {
-			finalPath = resDirectory.getAbsolutePath() + "/res-mipmap/mipmap-" + resFolder + "/" + f.getName();
+			finalPath = resDirectory.getAbsolutePath() + "/mipmap-" + resFolder + "/" + f.getName();
 		}else{
-			finalPath = resDirectory.getAbsolutePath() + "/res-drawable/drawable-" + resFolder + "/" + f.getName();
+			finalPath = resDirectory.getAbsolutePath() + "/drawable-" + resFolder + "/" + f.getName();
 		}
 		
 		File destFile=new File(finalPath);
