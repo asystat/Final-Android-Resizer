@@ -130,7 +130,7 @@ public class ResizerFrame extends JFrame {
     public ResizerFrame() {
         super("Final Android Resizer");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 350);
+        setBounds(100, 100, 600, 350);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -277,7 +277,7 @@ public class ResizerFrame extends JFrame {
         comboBoxItems.add("xxxhdpi");
         final DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>(comboBoxItems);
         inputDensity = new JComboBox<String>(model);
-        inputDensity.setSelectedIndex(4);
+        inputDensity.setSelectedIndex(5);
         GridBagConstraints gbc_inputDensity = new GridBagConstraints();
         gbc_inputDensity.insets = new Insets(0, 0, 0, 5);
         gbc_inputDensity.fill = GridBagConstraints.HORIZONTAL;
